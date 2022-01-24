@@ -1,8 +1,8 @@
 import Form from "react-jsonschema-form";
-function App() {
+function App({ onSubmit }) {
 //const Form = JSONSchemaForm.default;
 const schema = {
-  title: "Test form",
+  title: "A simple form",
   type: "object",
   properties: {
     Name: {
@@ -15,21 +15,20 @@ const schema = {
       type: "string"
     },
     Published: {
-      title: "Published",
       type: "string",
       format: "date-time"
     },
     Content: {
-      title: "Content",
       type: "string"
     }
-  }
+  },
+  required: ["Name", "Age","Address","Published", "Content"]
 };
   return (
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-        <Form schema={schema} />
+        <Form onSubmit={onSubmit} schema={schema} />
         </div>
       </div>
     </div>
