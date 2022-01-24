@@ -5,20 +5,33 @@ const schema = {
   title: "Test form",
   type: "object",
   properties: {
-    name: {
+    Name: {
       type: "string"
     },
-    age: {
+    Age: {
       type: "number"
     },
-    address:{
+    Address:{
+      type: "string"
+    },
+    Published: {
+      title: "Published",
+      type: "string",
+      format: "date-time"
+    },
+    Content: {
+      title: "Content",
       type: "string"
     }
   }
 };
   return (
-    <div className="App">
-      <Form schema={schema} />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        <Form schema={schema} />
+        </div>
+      </div>
     </div>
   );
 }
